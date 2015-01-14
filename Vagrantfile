@@ -41,11 +41,20 @@ Vagrant.configure("2") do |config|
     chef.cookbooks_path = "cookbooks"
     chef.data_bags_path = "data_bags"
 
+    chef.add_recipe "apache2"
+    chef.add_recipe "php"
+    chef.add_recipe "php-box"
+    chef.add_recipe "composer"
+    chef.add_recipe "openssl"
+    chef.add_recipe "mysql"
+    chef.add_recipe "nodejs"
+    chef.add_recipe "oh-my-zsh"
+
     # List of recipes to run
-    chef.add_recipe "vagrant_main"
-    chef.add_recipe "vagrant_main::wordpress"
-    chef.add_recipe "vagrant_main::drupal"
-    chef.add_recipe "vagrant_main::magento"
-    chef.add_recipe "vagrant_main::nodejs"
+    #chef.add_recipe "vagrant_main"
+    #chef.add_recipe "vagrant_main::wordpress"
+    #chef.add_recipe "vagrant_main::drupal"
+    #chef.add_recipe "vagrant_main::magento"
+    #chef.add_recipe "vagrant_main::nodejs"
   end
 end
